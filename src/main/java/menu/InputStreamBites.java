@@ -46,6 +46,7 @@ public class InputStreamBites {
             String answer = printScanner.next();
             switch (answer.toLowerCase()) {
                 case "y":
+                    System.out.println("Укажите имя файла без расширения");
                     targetFile(userName() + ".bin");
                     flag = false;
                     break;
@@ -65,19 +66,18 @@ public class InputStreamBites {
 
         return printScanner.next();
     }
-    //    ;
-//            LibraryIOUtils.input(in);
+
     private static void targetFile(String name) {
 
 
         try (InputStream in= new FileInputStream(name)) {
-                db.add(IOMediaItem.inputMediaItem(in));
+                db.setDb(IOMediaItem.inputMediaItem(in, db));
 
             System.out.println("------------");
             System.out.println("База заполнена из файла " + name);
             System.out.println("------------");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Указанный файл не существует");
         }
     }
 }

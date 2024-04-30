@@ -17,6 +17,7 @@ public class PrintBites {
             String answer = printScanner.next();
             switch (answer.toLowerCase()) {
                 case "y":
+                    System.out.println("Укажите имя файла без расширения");
                     printDefault(userName() + ".bin");
                     flag = false;
                     break;

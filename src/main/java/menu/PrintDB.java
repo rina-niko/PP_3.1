@@ -20,6 +20,7 @@ public class PrintDB {
             String answer = printScanner.next();
             switch (answer.toLowerCase()) {
                 case "y":
+                    System.out.println("Укажите имя файла без расширения");
                     printDefault(userName() + ".txt");
                     flag = false;
                     break;

@@ -1,17 +1,19 @@
 package utils;
 
 import imb.Anime;
+import imb.MediaDB;
 import imb.MediaItem;
 import imb.Series;
 
 import java.io.*;
+import java.util.List;
 
 public class IOMediaItem {
     public static void outputMediaItem(MediaItem obj, OutputStream out) {
         obj.output(out);
     }
 
-    public static MediaItem inputMediaItem(InputStream in) {
+    public static List<MediaItem> inputMediaItem(InputStream in, MediaDB db) {
         MediaItem item = null;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(in))) {
             String line;
@@ -27,11 +29,12 @@ public class IOMediaItem {
                 } else if (className.equals("Anime")) {
                     item = new Anime(durationEpisodes, mediaItemName, durationIntro);
                 }
+                db.add(item);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return item;
+        return db.getDb();
     }
 
     public static void writeMediaItem(MediaItem obj, Writer out) {
