@@ -42,10 +42,10 @@ public class UtilsMediaItem {
         return new UnmodifiableMediaItem(item);
     }
     //6
-    public static MediaItemFactory createInstance(){
+    public static MediaItem createInstance(){
         return factory.createInstance();
     }
-    public static MediaItemFactory createInstance(int[] durationEpisode, String name, int durationIntro){
+    public static MediaItem createInstance(int[] durationEpisode, String name, int durationIntro){
         return factory.createInstance(durationEpisode, name, durationIntro);
     }
 

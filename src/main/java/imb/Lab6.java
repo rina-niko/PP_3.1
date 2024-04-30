@@ -29,13 +29,14 @@ public class Lab6 {
         }
         System.out.println(mutableItem);
         System.out.println("------------------");
-//        Sellable auto = SellableReader.createInstance("Hyundai", "Solaris", 2018, new String[]{"Хетчбек", "Механика", "124 лс", "13531 км"});
-//        SellableReader.setSellableFactory(new Boat.Factory());
-        //Sellable boat = SellableReader.createInstance("Four Winns", "Horizon 180", 2016, new String[]{"Стеклопластик", "Стационарный мотор", "длина 5,3м", "ширина 2,4м", "осадка 0,2м", "6 пассажиров"});
-        Series houseMD = (Series) UtilsMediaItem.createInstance(new int[]{20, 40, 48, 60}, "Доктор Хаус", 2);
+        Series houseMD = (Series) UtilsMediaItem.createInstance(new int[]{25, 37, 41, 55}, "Доктор Хаус", 2);
         UtilsMediaItem.setMediaItemFactory(new SeriesFactory());
-        MediaItemFactory doctorWho =  UtilsMediaItem.createInstance(new int[]{12,20,30,45},"Доктор Кто",1);
+        Series doctorWho = (Series) UtilsMediaItem.createInstance(new int[]{12,20,30,45},"Доктор Кто",1);
         System.out.println(houseMD);
+        for (Integer item: houseMD){
+            System.out.println(item);
+        }
+
         System.out.println(doctorWho);
     }
 

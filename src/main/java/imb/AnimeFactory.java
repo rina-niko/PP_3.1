@@ -4,14 +4,13 @@ public class AnimeFactory implements MediaItemFactory {
 
 
     @Override
-    public MediaItemFactory createInstance() {
-        new Anime();
-        return null;
+    public MediaItem createInstance() {
+        return new Anime();
     }
 
     @Override
-    public MediaItemFactory createInstance(int[] durationEpisode, String name, int durationIntro) {
-        new Anime(durationEpisode, name, durationIntro);
-        return null;
+    public MediaItem createInstance(int[] durationEpisode, String name, int durationIntro) {
+        return new Anime(durationEpisode, name, durationIntro);
+
     }
 }

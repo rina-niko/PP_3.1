@@ -2,8 +2,8 @@ package imb;
 
 public interface MediaItemFactory {
 
-    public MediaItemFactory createInstance();
-    public MediaItemFactory createInstance(int[] durationEpisode, String name, int durationIntro);
+    public MediaItem createInstance();
+    public MediaItem createInstance(int[] durationEpisode, String name, int durationIntro);
 
 
 }
